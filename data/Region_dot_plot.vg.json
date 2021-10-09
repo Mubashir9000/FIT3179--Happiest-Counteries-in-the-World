@@ -1,0 +1,80 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A trellis bar chart showing the US population distribution of age groups and gender in 2000.",
+  "data": { "url": "https://raw.githubusercontent.com/Mubashir9000/FIT3179/main/data/World%20Happiness%20Report.csv"},
+  "background":"#d9c3da",
+  "width": 350,
+  "height":500,
+  "config": {"axisX": {"labels": false,"ticks": false,"title":null}},
+  "params": [{"name": "region_selection",
+    "bind":{"input": "select",
+      "options":[null,"Africa","Asia-Pacific","Eastern Europe","Europe","Latin America"
+      ,"North America","Western Europe"],
+      "labels": [
+        "Show All","Africa","Asia-Pacific","Eastern Europe","Europe","Latin America"
+        ,"North America","Western Europe"
+      ],"name": "Region Selection"
+      }}],
+      "transform": [{"filter":"region_selection==null || datum.Region == region_selection"}],
+  "encoding": {
+    "y": {
+      "aggregate": "sum", "field": "Happiness Score",
+      "title": "Happiness Score"},
+    "x": {"field": "Country"}},
+   "layer":[{
+    "selection":{"region_highlight":{"type":"multi","fields":["Region"],"bind":"legend"}},
+      "mark": "circle",
+      "encoding":{ "color": {
+        "field": "Region",
+        "type": "nominal",
+        "scale":{"domain":["Africa","Asia-Pacific","Eastern Europe","Europe","Latin America"
+        ,"North America","Western Europe"],
+        "range":["#7fc97f",
+          "#beaed4",
+          "#fdc086",
+          "#ffff99",
+          "#386cb0",
+          "#f0027f",
+          "#bf5b17"]
+        
+      
+      }
+      }
+    ,
+    "legend":{"format":".1s"},
+    "opacity": {
+      "condition": {"selection": "region_highlight", "value": 0.6},
+      "value": 0.1},
+    "size":{"field":"Happiness Score","type": "quantitative"
+    ,"scale":{"type": "threshold","domain":[2,4,6,8]}}, 
+    "tooltip": [
+        {"field": "Country", "type": "nominal", "title": "Country"},
+        {"field":"Region","type": "nominal"},
+        {"field": "Happiness Score", "type": "quantitative"},
+        {"field":"Happiness Rank","type": "quantitative"}
+      ]
+      }}
+   ,{
+      "mark":{"type":"text","align":"right","baseline":"middle","dx": -12,
+        "fontSize": 11.5,
+        "fontStyle": "italic"},
+        "encoding": {
+           "text": {"field": "Country", "type": "nominal"},
+           "color": {"value": "black"},
+           "opacity": {
+           "condition": {
+           "test": "datum['Country'] == 'China' || datum['Country'] == 'Singapore' || datum['Country'] == 'Australia' || datum['Country'] == 'New Zealand'|| datum['Country'] == 'Italy' || datum['Country'] == 'Yemen' || datum['Country'] == 'United States of America'",
+           "value": 1
+           },
+           "value": 0
+           }
+
+   },"tooltip": [
+    {"field": "Country", "type": "nominal", "title": "Country"},
+    {"field":"Region","type": "nominal"},
+    {"field": "Happiness Score", "type": "quantitative"},
+    {"field":"Happiness Rank","type": "quantitative"}
+  ]
+  
+  
+}]}

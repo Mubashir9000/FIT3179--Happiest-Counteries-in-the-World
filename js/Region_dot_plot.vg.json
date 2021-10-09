@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A trellis bar chart showing the US population distribution of age groups and gender in 2000.",
+    "data": { "url": "https://raw.githubusercontent.com/Mubashir9000/Suicide/main/World%20Happiness%20Report.csv"},
+    "width": {"step": 2},
+    "mark": "point",
+    "encoding": {
+      "row": {"field": "Region"},
+      "y": {
+        "aggregate": "sum", "field": "Happiness Score",
+        "title": "Happiness Score"
+      },
+      "x": {"field": "Country"},
+      "color": {
+        "field": "Region",
+        "title":null      
+    },
+    "tooltip": [
+        {"field": "Country", "type": "nominal", "title": "Country"},
+        {"field": "Happiness Score", "type": "quantitative"}
+      ]
+    },
+    "config": {"axisX": {"labels": false,"ticks": false,"title":null}}
+    
+  }
