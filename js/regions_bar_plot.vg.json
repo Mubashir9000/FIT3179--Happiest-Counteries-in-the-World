@@ -1,0 +1,87 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "width": 550,
+    "height": 500,
+    "background": "#d9c3da",
+    "data": {
+      "values": [
+   {
+     "Region": "Africa",
+     "AverageHappinessScore": 4.24
+   },
+   {
+     "Region": "Asia-Pacific",
+     "AverageHappinessScore": 5.36
+   },
+   {
+     "Region": "Eastern Europe",
+     "AverageHappinessScore": 5.51
+   },
+   {
+    "Region": "Latin America",
+     "AverageHappinessScore": 5.96
+   },
+   {
+    "Region": "North America",
+    "AverageHappinessScore": 7.15
+   },
+   {
+    "Region": "Western Europe",
+     "AverageHappinessScore": 6.88
+   },
+   {"Region":"Europe",
+    "AverageHappinessScore":4.09
+}
+  ]
+    },
+  
+    "encoding": {
+      "y": {
+        "field": "Region",
+        "type": "nominal",
+        "axis": {"title": null, "labelFontSize": 15}
+      },
+      "x": {
+        "field": "AverageHappinessScore",
+        "type": "quantitative",
+        "title": null,
+        "axis": null
+      }
+    },
+    "layer": [
+      {
+        "mark": "bar",
+        "encoding": {
+          "color": {
+              "legend":null,
+            "field": "AverageHappinessScore",
+          "type": "nominal",
+          "scale":{"domain":["4.09","4.24","5.36","7.15","6.88"
+          ,"5.51","5.96"],
+          "range":["#808080",
+            "#808080",
+            "#DB7093",
+            "#FF1493",
+            "#FF69B4",
+            "#DB7093",
+            "#DB7093"]
+          }
+        }
+      }},
+      {
+        "mark": {
+          "type": "text",
+          "fontSize": 15,
+          "fontWeight":"bold",
+          "align": "right",
+          "xOffset": -4,
+          "aria": false
+        },
+        "encoding": {
+          "text": {"field": "AverageHappinessScore", "type": "quantitative"},
+          "color": {"value": "black"}
+        }
+      }
+    ],
+    "config": {"tick": {}}
+  }

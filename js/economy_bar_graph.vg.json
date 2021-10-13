@@ -1,0 +1,82 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 550,
+    "height": 500,
+    "background": "#d9c3da",
+    "data": {
+      "values":[
+    {
+      "Country": "Qatar",
+      "Economy":1.870,
+      "Happiness Rank":35
+    },
+    {
+      "Country":"Luxemburg",
+      "Economy": 1.74,
+      "Happiness Rank":18
+    },
+    {
+      "Country":"Sinagpore",
+      "Economy":1.69,
+      "Happiness Rank":26
+    },
+    {
+      "Country":"Kuwait",
+      "Economy":1.63,
+      "Happiness Rank":39
+    },
+    {
+      "Country":"United Arab Emirates",
+      "Economy":1.62,
+      "Happiness Rank":21
+    }
+      ]
+    },
+  
+    "encoding": {
+      "y": {
+        "field": "Economy",
+        "type": "quantitative",
+        "axis": {"title": null, "labelFontSize": 15}
+      },
+      "x": {
+        "field": "Country",
+        "type": "nominal",
+        "title": null,
+        "axis": null
+      }
+    },
+    "layer": [
+      {
+        "mark": "bar",
+        "encoding": {
+          "color": {
+              "legend":null,
+            "field": "Economy",
+          "type": "quantitative",
+          "scale":{"type": "linear","scheme":"greens"}
+        },
+      "tooltip":[
+      {"field":"Economy","type": "quantitative"},
+      {"field":"Happiness Rank","type": "quantitative"}
+      ]
+      }
+    
+    },
+      {
+        "mark": {
+          "type": "text",
+          "fontSize": 15,
+          "fontWeight":"bold",
+          "align": "center",
+          "xOffset": -5,
+          "aria": false
+        },
+        "encoding": {
+          "text": {"field": "Country", "type": "nominal"},
+          "color": {"value": "black"}
+        }
+      }
+    ],
+    "config": {"tick": {}}
+  }

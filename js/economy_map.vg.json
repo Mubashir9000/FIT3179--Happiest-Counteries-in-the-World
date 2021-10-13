@@ -1,13 +1,13 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {"text":"Wealth","align": "center","fontWeight":"bold","fontSize":35,"color":"dimgray"},
+    "title": {"text":"Economy","align": "center","fontWeight":"bold","fontSize":35,"color":"green"},
     "align":"all",
     "autosize":"fit",
     "width": 550,
     "height": 500,
-    "background":"lightblue",
-    "view":{"fill":"lightblue"},
-    "config": {"legend": {"labelColor":"dimgray","titleColor":"dimgray"},"mark": {"invalid":null}},
+    "background":"#d9c3da",
+    "view":{"fill":"#d9c3da"},
+    "config": {"legend": {"labelColor":"green","titleColor":"green"},"mark": {"invalid":null}},
     "data": {
       "url": "https://raw.githubusercontent.com/KaneSec/vega_lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
       "format": {
@@ -19,10 +19,10 @@
         "lookup": "properties.NAME",
         "from": {
           "data": {
-            "url": "https://raw.githubusercontent.com/Mubashir9000/Suicide/main/World%20Happiness%20Report.csv"
+            "url": "https://raw.githubusercontent.com/Mubashir9000/FIT3179/main/data/World%20Happiness%20Report.csv"
           },
           "key": "Country",
-          "fields": ["Economy"]
+          "fields": ["Economy","Happiness Score","Happiness Rank"]
         }
       }
     ],
@@ -40,11 +40,13 @@
         },
         "field": "Economy",
         "type": "quantitative",
-        "scale": {"type": "linear","scheme":"warmgreys"}
+        "scale": {"type": "linear","scheme":"greens"}
       },
       "tooltip": [
         {"field": "properties.NAME", "type": "nominal", "title": "Country"},
-        {"field": "Economy", "type": "quantitative"}
+        {"field": "Economy", "type": "quantitative"},
+        {"field":"Happiness Score","type": "quantitative"},
+        {"field":"Happiness Rank","type":"quantitative"}
       ]
     }
   

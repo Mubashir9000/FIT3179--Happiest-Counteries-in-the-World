@@ -1,8 +1,39 @@
-{
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+  <!-- Import vega-embed -->
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/Mubashir9000/FIT3179/main/css/styles.css" media="all">
+  
+</head>
+<body>
+
+<h1>An Example of Multiple Visualisations</h1>
+
+<h2>This is the first visualisation</h2>
+<div id="choropleth_map"></div>
+
+<h2>This is the second visualisation</h2>
+<div id="scatter_plot"></div>
+
+<script type="text/javascript">
+  
+  var vis1 = "https://raw.githubusercontent.com/Mubashir9000/FIT3179/main/js/choropleth_map.vg.json";
+  
+  vegaEmbed('#choropleth_map', vis1).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+  var vis2 = {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "A trellis bar chart showing the US population distribution of age groups and gender in 2000.",
   "data": { "url": "https://raw.githubusercontent.com/Mubashir9000/FIT3179/main/data/World%20Happiness%20Report.csv"},
-  "background":"#d9c3da",
+  "background":"white",
   "width": 350,
   "height":500,
   "config": {"axisX": {"labels": false,"ticks": false,"title":null}},
@@ -15,27 +46,38 @@
         ,"North America","Western Europe"
       ],"name": "Region Selection"
       }}],
-      "transform": [{"filter":"region_selection==null || datum.Region == region_selection"},
-    {"calculate": "7< datum.[Happiness Score] && datum.[Happiness Score]<< 8? "}],
+      "transform": [{"filter":"region_selection==null || datum.Region == region_selection"}],
   "encoding": {
     "y": {
       "aggregate": "sum", "field": "Happiness Score",
       "title": "Happiness Score"},
     "x": {"field": "Country"}},
    "layer":[{
-    "selection":{"score_highlight":{"type":"multi","fields":["Happiness Score"],"bind":"legend"}},
+    "selection":{"region_highlight":{"type":"multi","fields":["Region"],"bind":"legend"}},
       "mark": "circle",
-      "encoding":{ 
-        "color": {
-        "field": "Happiness Score",
-        "type": "quantitative",
-        "scale": {"type": "threshold","domain":[5,6,7,7],"range":["#808080","#FFC0CB","#FF69B4","#FF1493"]}
-      },
+      "encoding":{ "color": {
+        "field": "Region",
+        "type": "nominal",
+        "scale":{"domain":["Africa","Asia-Pacific","Eastern Europe","Europe","Latin America"
+        ,"North America","Western Europe"],
+        "range":["#7fc97f",
+          "#beaed4",
+          "#fdc086",
+          "#ffff99",
+          "#386cb0",
+          "#f0027f",
+          "#bf5b17"]
+        
+      
+      }
+      }
+    ,
     "legend":{"format":".1s"},
     "opacity": {
-      "condition": {"selection": "score_highlight", "value": 0.6},
+      "condition": {"selection": "region_highlight", "value": 1},
       "value": 0.1},
-    
+    "size":{"field":"Happiness Score","type": "quantitative"
+    ,"scale":{"type": "threshold","domain":[2,4,6,8]}}, 
     "tooltip": [
         {"field": "Country", "type": "nominal", "title": "Country"},
         {"field":"Region","type": "nominal"},
@@ -66,4 +108,12 @@
   ]
   
   
-}]}
+}]};
+  
+  vegaEmbed('#scatter_plot', vis2).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+
+</body>
+</html>

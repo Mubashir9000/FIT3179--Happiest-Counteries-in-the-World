@@ -1,0 +1,17 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bar chart showing the US population distribution of age groups in 2000.",
+    "height": {"step": 17},
+    "data": { "url": "https://raw.githubusercontent.com/Mubashir9000/FIT3179/main/data/World%20Happiness%20Report.csv"},
+    "mark": "bar",
+    "encoding": {
+      "y": {"field": "Region"},
+      "x": {
+        "aggregate": "average", "field": "Happiness Score"
+      },
+      "tooltip":[
+        {"field":"Happiness Score","type": "quantitative","aggregate":"average"}
+
+      ]
+    }
+  }

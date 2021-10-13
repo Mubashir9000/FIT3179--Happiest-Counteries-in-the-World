@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "repeat": 
+       ["Economy", "Family", "Health","Freedom","Generosity","Corruption","Dystopia","Job Satisfaction"],  
+    "columns": 3,
+    "background":"#d9c3da",
+    "spec": {
+      "data": {"url": "https://raw.githubusercontent.com/Mubashir9000/FIT3179--Happiest-Counteries-in-the-World/main/data/World%20Happiness%20Report.csv"},
+      "mark": "circle",
+      "encoding": {
+        "x": {"field": {"repeat": "repeat"}, "type": "quantitative"},
+        "y": {
+          "field": "Happiness Score",
+          "type": "quantitative"
+        },
+        "color": {
+          "field":"Status",
+          "type": "nominal",
+          "scale":{"type": "threshold","domain":["Very Happy","Happy","Somewhat Happy","Not Happy"],"range":["#FF1493","#FF69B4","#DB7093","#808080"]
+        }
+        
+        }
+      }
+    }
+  }
