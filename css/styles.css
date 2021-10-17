@@ -12,7 +12,9 @@
 	left: 70px;
 	right: 100px;
 }
-
+#vis3{
+	left: 35px;
+}
 #vis4{
 	top:100px;
 	bottom: 100px; 
@@ -25,5 +27,8 @@
 	bottom: 100px; 
 	left: 200px;
 	right: 100px;
+}
+#vis7{
+	left: 35px;
 }
 
