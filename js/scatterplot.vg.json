@@ -4,10 +4,21 @@
        ["Economy", "Family", "Health","Freedom","Generosity","Corruption","Dystopia","Job Satisfaction"],  
     "columns": 3,
     "background":"#d9c3da",
+    "params": [{"name": "region_selection",
+      "bind":{"input": "select",
+        "options":[null,"Africa","Asia-Pacific","Eastern Europe","Europe","Latin America"
+        ,"North America","Western Europe"],
+        "labels": [
+          "Show All","Africa","Asia-Pacific","Eastern Europe","Europe","Latin America"
+          ,"North America","Western Europe"
+        ],"name": "Region Selection"
+        }}],
     "spec": {
+      
       "data": {"url": "https://raw.githubusercontent.com/Mubashir9000/FIT3179--Happiest-Counteries-in-the-World/main/data/World%20Happiness%20Report.csv"},
       "selection":{"score_highlight":{"type":"multi","fields":["Status"],"bind":"legend"}},
       "mark": "circle",
+      "transform": [{"filter":"region_selection==null || datum.Region == region_selection"}],
       "encoding": {
         "x": {"field": {"repeat": "repeat"}, "type": "quantitative"},
         "y": {

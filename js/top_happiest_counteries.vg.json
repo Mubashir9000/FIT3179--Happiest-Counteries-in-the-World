@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data":{"url": "https://raw.githubusercontent.com/Mubashir9000/FIT3179--Happiest-Counteries-in-the-World/main/data/World%20Happiness%20Report.csv"},
+    "mark": "rect",
+    "encoding": {
+      "y": {
+        "field": "Country",
+        "type": "nominal",
+        "axis": {"title": null, "labelFontSize": 15, "titleFontSize": 15}
+      },
+      "x": {
+        "field": "Status",
+        "type": "nominal",
+        "axis": {"title": null, "labelFontSize": 15, "titleFontSize": 15,"labelAngle":0}
+      },
+      "color": {
+        "field": "Happiness Score",
+        "title": "Happiness Score",
+        "scale": {"type": "linear"},
+        "legend": {"labelFontSize": 15, "titleFontSize": 15}
+      },
+      "tooltip": [
+        {"field": "Country", "type": "nominal", "title": "Country"},
+        {
+          "field": "Happiness Score",
+          "type": "quantitative",
+          "title": "Happiness Score"
+        }
+      ]
+    },
+    "config": {"axis": {"grid": true, "tickBand": "extent"}}
+}

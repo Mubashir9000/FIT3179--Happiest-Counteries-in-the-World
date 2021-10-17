@@ -1,0 +1,71 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 550,
+    "height": 500,
+    "background":"#d9c3da",
+    "data": {
+        "url": "https://raw.githubusercontent.com/Mubashir9000/FIT3179/main/data/World%20Happiness%20Report.csv"
+    },
+    "transform": [
+        {"filter": "datum['Happiness Rank'] <= 5"},
+        {"fold": [
+                "Economy",
+                "Family",
+                "Health",
+                "Freedom",
+                "Generosity",
+                "Corruption",
+                "Dystopia"
+            ],
+            "as": [
+                "explained by",
+                "factor"
+            ]
+        }
+    ],
+    "selection":{"highlight":{"type":"multi","fields":["explained by"],"bind":"legend"}},
+    "mark": {
+        "type": "bar"
+    },
+    "encoding": {
+        "y": {
+            "field": "Country",
+            "title": "Country",
+            "axis": {
+                "domain": false,
+                "titlePadding": 15,
+                "labelFontSize":15
+            }
+        },
+        "x": {
+            "field": "factor",
+            "type": "quantitative",
+            "axis": {
+                "domain": false,
+                "grid": false,
+                "titlePadding": 15,
+                "labelFlush": false,
+                "title":"Happiness Score"
+            }
+        },
+        "color": {
+            "field": "explained by",
+            "title":"Factors",
+            "type": "nominal",
+            "scale":{"scheme":"viridis"}
+        },
+        "tooltip": [
+            {
+                "field": "Country"
+            },
+            {
+                "field": "Happiness Score",
+                "type": "quantitative",
+                "format": ".3f"
+            }
+        ],
+        "opacity": {
+            "condition": {"selection": "highlight", "value": 1},
+            "value": 0.1}
+    }
+}

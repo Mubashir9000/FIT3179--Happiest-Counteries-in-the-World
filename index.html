@@ -38,79 +38,75 @@
     .description h2, h1{
       margin-top:0px;
     }
-    .description-right {
-      padding-left: 20px;
-    }
+  
     .description-left{
       padding-right: 20px;
     }
-    .small-font{
-        font-size: 14px;
-    }
+   
   </style>
 </head>
 <body>
   <div class ='page'>
-    <!--pure grid group-->
+   
     <div class="pure-g">       
       <div class="pure-u-1-1">
-        <h1 style = margin-bottom:60px>Happiest Counteries around the World</h1>                                                                                                                                                                                                  
-        </p>
+        <h1 style = margin-bottom:60px><span style="color:deeppink ;">Happiest</span> Countries around the World</h1>                                                                                                                                                                                                   
+      </p>
       </div>
     </div>
-
-     <!-- pure grid group -->
+    
+    <div class='pure-img'>
+      <div class = 'pure-u-1-1'>
+        <img src="happy.png" height="100" style="margin-left: 370px; margin-top: -55px;">
+        </div>
+        </div>
+   
      <div class="pure-g">       
       <div class="pure-u-1-1">                                                                                                                                                                                                  
-        <p style = margin-bottom:35px>The term <strong> Happiness</strong> is used in the context of mental or emotional states, including positive or pleasant emotions ranging from contentment to intense joy. It is also used in the context of life satisfaction, subjective well-being, eudaimonia, flourishing and well-being.</p>
-<!-- end pure grid group -->
+        <p style = margin-bottom:35px>The term <strong> <span style="color:deeppink ;">Happiness</span></strong> is used in the context of mental or emotional states, including positive or pleasant emotions ranging from contentment to intense joy. It is also used in the context of life satisfaction, subjective well-being, eudaimonia, flourishing and well-being.</p>
 
- <!-- pure grid group -->
  <div class="pure-g">
      <div class="pure-u-1-1">
        <div class="description description-left">
-         <h2 style="font-size: 30px ;font-weight: 700; margin-bottom:5px;">How Happy are the Counteries around the world?</h2>
+         <h2 style="font-size: 30px ;font-weight: 700; margin-bottom:5px;">How <span style="color: deeppink;">Happy</span> are the Countries around the world?</h2>
        </div>
  </div>
  <div class="pure-g">
   <div class="pure-u-1-1">
     <div class="description description-left">
-      <h3 style="font-size: 25px ;font-weight: 400;">Happiness Score</h3>
-      <p style = margin-bottom:35px>In this map, we look at the happiness score of all the counteries in the year <strong>2017</strong>
-         The map is divided into 4 parts <strong>Very Happy</strong> which has <strong>Happiness Score between 7 and 8</strong>, <strong>Happy</strong> which has <strong>Happiness Score between 6 and 7</strong>,
-        <strong>Somewhat Happy</strong> which has <strong>Happiness Score between 5 and 6</strong> and <strong>Not Happy</strong> which has <strong>Happiness Score below 5</strong>.
-      Hover over a country to see the <strong>Happiness Score</strong>.
+      <h3 style="font-size: 25px ;font-weight: 400;"><span style="color:deeppink;">Happiness Score</span></h3>
+      <p style = margin-bottom:35px>In this map, we look at the <span style="color: #FF1493;">Happiness Score</span> of all the countries in the year <strong>2017</strong> 
+        The map is divided into 4 parts <strong><span style="color: #FF1493;">Very Happy</strong></span> which has <span style="color: #FF1493;">Happiness Score</span> <strong>between 7 and 8</strong>, <strong><span style="color: #FF69B4;">Happy</strong></span> which has <span style="color: #FF1493;">Happiness Score</span> <strong>between 6 and 7</strong>,
+        <strong><span style="color: #DB7093;">Somewhat Happy</span></strong> which has <span style="color: #FF1493;">Happiness Score</span> <strong>between 5 and 6</strong> and <strong><span style="color: #808080;">Not Happy</span></strong> which has <span style="color: #FF1493;">Happiness Score</span> <strong>below 5</strong>.
+        Hover over a country to see the <span style="color: #FF1493;">Happiness Score</span>.
       </p>
     </div>
   </div>
   <div class="pure-u-2-3">
-    <div id="choropleth_map" class="vis-container" style = top:0px;></div>
+    <div id="choropleth_map" class="vis-container" style = top:30px;></div>
   </div>
 </div>
-<!--
-<div id="choropleth_map" ></div>
--->
- <!-- pure grid group -->
+
  <div class="pure-g">
   <div class="pure-u-1-1">
     <div class="description description-left">
-      <h3 style="font-size: 25px ;font-weight: 400;">Happiness Score by Region</h3>
-      <p style=margin-bottom:35px> Below we see all the counteries on the map, Hover over a dot to see the <strong>Happiness Score</strong> and <strong>Happiness Rank</strong> of the country.
-        To see the counteries by region please use the <strong>Region Selection option</strong> and to see counteries by their Happiness Status click on the status on the <strong>legend</strong>.
-        Through this visualization we can see that the most happiest country in 2017 was <strong>Norway</strong> with a <strong>Happiness Score</strong> of <strong>7.537</strong>. 
+      <h3 style="font-size: 25px ;font-weight: 400; top: 0px;"><span style="color:deeppink;">Happiness Score</span> by Region</h3>
+      <p style=margin-bottom:35px> Below we see all the countries on the map, Hover over a dot to see the <span style="color:deeppink;">Happiness Score</span> and <span style="color:deeppink;">Happiness Rank</span> of the country.
+        To see the counteries by region please use the <strong>Region Selection option</strong> and to see countries by their Happiness Status click on the status on the <strong>legend</strong>.
+        Through this visualization we can see that the most happiest country in 2017 was <strong>Norway</strong> with a <span style="color:deeppink;">Happiness Score</span> of <strong>7.537</strong>. 
       </p>
       </div>
   </div>
 <div class="pure-u-2-3">
-  <div id="economy_map"  class="vis-container" style = top:0px;></div>
+  <div id="economy_map" class="vis-container" style = "top:0px;"></div>
 </div>   
 </div>
-   <!-- pure grid group -->
+ 
    <div class="pure-g">
     <div class="pure-u-1-1">
       <div class="description description-left">
-        <p style = margin-bottom:35px><strong>North America</strong> has the highest average <strong>Happiness Score</strong> which is 
-          <strong>7.15</strong>. While Europe is the least happiest region with a <strong>Happiness Score</strong> of 
+        <p style = margin-bottom:35px><strong>North America</strong> has the highest average <span style="color:deeppink;">Happiness Score</span> which is 
+          <strong>7.15</strong>. While Europe is the least happiest region with a <span style="color:deeppink;">Happiness Score</span> of 
           <strong>4.09</strong> on average. It is interesting to note that the happiest country <strong>Norway</strong> is
           a part of <strong> Western Europe</strong> yet the region ranked 2nd.
         </p>
@@ -124,18 +120,18 @@
   <div class="pure-g">
     <div class="pure-u-1-1">
       <div class="description description-left">
-        <h2 style="font-size: 30px ;font-weight: 700; margin-bottom:5px;">What makes a country Happy?</h2>
+        <h2 style="font-size: 30px ;font-weight: 700; margin-bottom:5px;">What makes a country <span style="color: #FF1493;">Happy</span>?</h2>
       </div>
 </div>
 <div class="pure-g">
   <div class="pure-u-1-1">
     <div class="description description-left">
-      <h3 style="font-size: 25px ;font-weight: 400;">Does Money buy Happiness?</h3>
+      <h3 style="font-size: 25px ;font-weight: 400;">Does <span style="color:green;">Money</span> buy <span style="color: #FF1493;">Happiness</span>?</h3>
       <p style=margin-bottom:35px> A highly popular belief in our society is that money can buy you 
-        happiness. So most people would argue that a country's <strong>Economy</strong> is the number 1
+        happiness. So most people would argue that a country's <span style="color: green;">Economy</span> is the number 1
         factor in deciding if a country is happy or not. Below is a world map showing each country's 
-        <strong>Economy</strong>. Hover over a country to view the country's <strong>Economy</strong>, 
-        <strong> Happiness Score</strong> and <strong>Happiness Rank</strong>.
+        <span style="color: green;">Economy</span>. Hover over a country to view the country's <span style="color: green;">Economy</span>, 
+        <span style="color:deeppink;">Happiness Score</span> and <span style="color:deeppink;">Happiness Score</span>.
       </p>
       </div>
   </div>
@@ -147,10 +143,10 @@
     <div class="pure-u-1-1">
       <div class="description description-left">
         <p style=margin-bottom:35px> 
-         Below is a bar chart showing the <strong>Top 5 Richest</strong>.
-         Hover over the graph to see the <strong>Economy</strong> and <strong>Happiness Rank</strong>.
-         It is interesting to see that even though these counteries are very rich. They are not even in the
-         top 10 happiest counteries of the world.
+         Below is a bar chart showing the <strong>Top 5 Richest Countries</strong>.
+         Hover over the graph to see the <span style="color: green;">Economy</span> and <span style="color:deeppink;">Happiness Score</span>.
+         It is interesting to see that even though these countries are very rich. They are not even in the
+         top 10 happiest countries of the world.
         </p>
         </div>
     </div>
@@ -164,9 +160,10 @@
       <div class="description description-left">
         <h3 style="font-size: 25px ;font-weight: 400;">Other factors?</h3>
         <p style=margin-bottom:35px> As we see money is not the deciding factor in determining the happiness 
-          of a country. Other factors inclued <strong>Family</strong>, <strong>Health</strong>, <strong>Freedom</strong>,
+          of a country.Other factors inclued <strong>Family</strong>, <strong>Health</strong>, <strong>Freedom</strong>,
           <strong>Generosity</strong>, <strong>Corruption</strong>, <strong>Dystopia</strong> and <strong>Job Satisfaction</strong>.
-          Below is a scatterplot matrix showing the relationship between the Happiness Score and all the factors.
+          Below is a scatterplot matrix showing the relationship between the Happiness Score and all the factors. Use the filter below
+          to look at the matrix by <strong>Region</strong>.Use the <strong>Legend</strong> to see by <strong>Status</strong>.
         </p>
         </div>
     </div>
@@ -175,6 +172,73 @@
     </div>
   </div>
   
+  <div class="pure-g">
+    <div class="pure-u-1-1">
+      <div class="description description-left">
+        <p style=margin-bottom:35px> 
+         Below is a stacked bar chart showing how each factor makes up the Happiness Score
+         for the <span style="color: #FF1493;">Top 5 Happiest Countries</span>.Use the <strong>Legend</strong> to see by <strong>Factor</strong>
+         .
+        </p>
+        </div>
+    </div>
+
+    <div class="pure-u-1-3">
+      <div id="vis7"  class="vis-container" style = top:0px></div>
+    </div>
+  </div>
+
+<div class="pure-g">
+  <div class="pure-u-1-1">
+    <div class="description description-left">
+      <h2 style="font-size: 30px ;font-weight: 700; margin-bottom:5px;">A look at the Top 5 <span style="color: #FF1493;">Happiest</span> Countries</h2>
+      </div>
+      </div>
+      <div class="pure-u-1-1">
+        <div class="description description-left">
+          <h3 style="font-size: 25px ;font-weight: 400;">Family and Health</h3>
+          <p style="margin-bottom: 35px;"><strong>Switzerland</strong> had the best <strong>Health</strong> ratings while
+            <strong>Norway</strong> had the best <strong>Family</strong> ratings amongst the Top 5.
+          </div>
+          </div>
+  <div class="pure-u-1-3">
+      <div id="vis8"  class="vis-container" style = top:0px></div>
+    </div>  
+  </div>
+  <div class="pure-u-1-1">
+    <div class="description description-left">
+      <h3 style="font-size: 25px ;font-weight: 400;">Freedom and Generosity</h3>
+      <p style="margin-bottom: 35px;"><strong>Iceland</strong> had the best <strong>Generosity</strong> ratings while
+        <strong>Norway</strong> had the best <strong>Freedom</strong> ratings amongst the Top 5.
+      </div>
+      </div>
+  <div class="pure-u-1-3">
+    <div id="vis9"  class="vis-container" style = top:0px></div>
+    </div>
+    <div class="pure-u-1-1">
+      <div class="description description-left">
+        <h3 style="font-size: 25px ;font-weight: 400;">Corruption and Dystopia</h3>
+        <p style="margin-bottom: 35px;"><strong>Demark</strong> had the highest <strong>Corruption</strong> ratings 
+          meaning least amount of Corruption, while
+          <strong>Finland</strong> had the highest <strong>Dystopia</strong> meaning least amount of Dystopia ratings amongst the Top 5.
+        </div>
+        </div>
+        <div class="pure-u-1-3">
+          <div id="vis10"  class="vis-container" style = top:0px></div>
+          </div>
+          <div class="pure-u-1-1">
+            <div class="description description-left">
+              <h3 style="font-size: 25px ;font-weight: 400;">Economy and Job Satisfaction</h3>
+              <p style="margin-bottom: 35px;">
+                <strong>Norway</strong> had the best <strong>Economy</strong> and the best <strong> 
+                Job Satisfaction</strong> ratings amongst the Top 5.
+              </div>
+              </div>
+              <div class="pure-u-1-3">
+                <div id="vis11"  class="vis-container" style = top:0px></div>
+                </div>
+
+          
 <script type="text/javascript">
 
   var spec2 = "js/choropleth_map.vg.json";
@@ -212,11 +276,45 @@ vegaEmbed('#vis4', spec4).then(function(result) {
 </script>
 
 <script type="text/javascript">
+  var spec6 = "js/factors_stacked_bar.vg.json";
+  vegaEmbed('#vis7',spec6).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+
+<script type="text/javascript">
+  var spec8 = "js/family_health_isotype.vg.json";
+  vegaEmbed('#vis8',spec8).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+
+<script type="text/javascript">
+  var spec8 = "js/freedom_generosity_isotype.vg.json";
+  vegaEmbed('#vis9',spec8).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+
+<script type="text/javascript">
+  var spec8 = "js/corruption_dystopia_isotype.vg.json";
+  vegaEmbed('#vis10',spec8).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+
+<script type="text/javascript">
+  var spec8 = "js/economy_jobsatisfaction_isotype.vg.json";
+  vegaEmbed('#vis11',spec8).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+<script type="text/javascript">
 var spec2 = {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "data": { "url": "https://raw.githubusercontent.com/Mubashir9000/FIT3179--Happiest-Counteries-in-the-World/main/data/World%20Happiness%20Report.csv"},
     "background":"#d9c3da",
-    "width": 350,
+    "width": 550,
     "height":500,
     "config": {"axisX": {"labels": false,"ticks": false,"title":null}},
     "params": [{"name": "region_selection",

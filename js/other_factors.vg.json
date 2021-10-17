@@ -4,7 +4,7 @@
     "columns": 3,
     "spec": {
       "data": {"url": "https://raw.githubusercontent.com/PhilippeCodes/World-Happiness-Report-Data-Analysis/master/World%20Happiness%20Report.csv"},
-      "mark": "bar",
+      "mark": "point",
       "encoding": {
         "x": {"field": {"repeat": "repeat"}, "bin": true},
         "y": {"aggregate": "count"},

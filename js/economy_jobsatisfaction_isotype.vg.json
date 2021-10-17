@@ -1,0 +1,35 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "config": {"view": {"stroke": ""}},
+    "width": 700,
+    "height": 90,
+    "background": "#d9c3da",
+    "data": {
+      "url": "https://raw.githubusercontent.com/Mubashir9000/FIT3179--Happiest-Counteries-in-the-World/main/data/EconomyandJobSatisfaction.csv"
+    },
+    "transform": [
+    
+      {
+        "calculate": "{'Economy': '💸', 'Job Satisfaction': '💰'}[datum.Rank]",
+        "as": "emoji"
+      },
+      {"window": [{"op": "rank", "as": "rank"}], "groupby": ["Country", "Rank"]}
+    ],
+    "mark": {"type": "text", "baseline": "middle"},
+    "encoding": {
+      "x": {"field": "rank", "type": "ordinal", "axis": null},
+      "y": {
+        "field": "Rank",
+        "type": "nominal",
+        "axis": {"labelFontSize": 15, "title": null},
+        "sort": null
+      },
+      "shape": {"field": "emoji"},
+      "row": {
+        "field": "Country",
+        "header": {"title": "", "labelFontSize": 17, "labelFontWeight": "bold"}
+      },
+      "text": {"field": "emoji", "type": "nominal"},
+      "size": {"value": 39}
+    }
+  }

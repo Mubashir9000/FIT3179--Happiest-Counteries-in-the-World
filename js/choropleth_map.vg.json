@@ -3,8 +3,8 @@
   "title": {"text":"Happiness","align": "center","fontWeight":"bold","fontSize":35,"color":"deeppink"},
   "align":"all",
   "autosize":"fit",
-  "width": 550,
-  "height": 500,
+  "width": 750,
+  "height": 700,
   "background":"#d9c3da",
   "view":{"fill":"#d9c3da"},
   "config": {"legend": {"labelColor":"darkblue","titleColor":"deeppink"},"mark": {"invalid":null}},
@@ -36,7 +36,7 @@
   "encoding": {
     "color": {
       "condition": {
-        "test": "datum['Staus'] === null",
+        "test": "datum['Happiness Score'] === null",
         "value": "#B0B0B0"
       },
       "field": "Status",
@@ -53,5 +53,6 @@
     ]
     
   }
+
 
 }
